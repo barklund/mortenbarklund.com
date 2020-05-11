@@ -1,0 +1,18 @@
+{
+  "name": "usereactpatterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  	"start": "hugo server -D",
+  	"build": "hugo -D",
+    "deploy:cname": "echo \"usereactpatterns.com\" > public/CNAME",
+    "deploy:gi": "cd public && git init && git add .",
+    "deploy:gc": "cd public && git commit -m \"Initial commit\"",
+    "deploy:gra": "cd public && git remote add origin git@github.com:useReactPatterns/usereactpatterns.github.io.git",
+    "deploy:ggp": "cd public && git push --force origin master",
+    "deploy": "npm run deploy:cname && npm run deploy:gi && npm run deploy:gc && npm run deploy:gra && npm run deploy:ggp"
+  },
+  "author": "",
+  "license": "ISC"
+}

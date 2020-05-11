@@ -1,0 +1,53 @@
+baseURL = "https://www.usereactpatterns.com/"
+languageCode = "en-us"
+title = "useReactPatterns"
+theme = "mediumish"
+summaryLength = 25
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+
+[params]
+  logo = "/images/logo.svg"
+  description = "Handy tips for writing better React."
+  talkyardServerUrl = "https://comments-for-usereactpatterns-com.talkyard.net"
+  talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
+
+[params.author]
+  name = "Morten Barklund"
+  thumbnail = "/images/author.jpg"
+  thumb = "/images/author.jpg"
+  description = "Lead Frontend Developer, Corgi fanatic and board game enthusiast. Also, I simply ❤️ hooks!"
+
+[params.index]
+  picture = "/images/logo.svg"
+  title = "useReactPatterns"
+  subtitle = "Handy tips for writing better React."
+  recent = "Popular posts"
+
+[params.social]
+  github = "barklund"
+  linkedin = "barklund"
+  medium = "barklund"
+  twitter = "barklund"
+  instagram = "mbarklund"
+
+## Main Menu
+[[menu.main]]
+    name = "Blog"
+    weight = 100
+    identifier = "blog"
+    url = "/blog"
+[[menu.main]]
+    name = "Subscribe"
+    identifier = "Subscribe"
+    weight = 200
+    url = "/newsletter"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 200
+    url = "/about"
+[[menu.main]]
+    name = "License"
+    identifier = "license"
+    weight = 300
+    url = "/license"
