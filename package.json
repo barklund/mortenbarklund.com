@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
   	"start": "hugo server -D",
-  	"build": "hugo -D",
+  	"build": "rm -rf ./public && hugo -D",
     "deploy:cname": "echo \"usereactpatterns.com\" > public/CNAME",
     "deploy:gi": "cd public && git init && git add .",
     "deploy:gc": "cd public && git commit -m \"Initial commit\"",
