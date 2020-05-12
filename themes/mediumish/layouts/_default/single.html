@@ -23,7 +23,7 @@
                         <div class="row post-top-meta">
                             <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
                                 <picture>
-                                    <source srcset="{{ .Site.Params.author.thumbnail | urlize | relURL}}.webp" />
+                                    <source srcset="{{ .Permalink }}.webp" />
                                     <img class="author-thumb" src="{{ .Site.Params.author.thumbnail | urlize | relURL}}" alt="{{ .Site.Params.author.name }}" />
                                 </picture>
                                 <img >

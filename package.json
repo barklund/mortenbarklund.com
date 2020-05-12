@@ -6,8 +6,8 @@
   "scripts": {
   	"start": "hugo server -D",
     "build:genwebp": "find . -iname *.jpg ! -exec test -f {}.webp ';' -print -exec cwebp -jpeg_like -af {} -o {}.webp ';'",
-  	"build:clean": "rm -rf <./public && hugo -D",
-    "build:generate": "rm -rf <./public && hugo -D",
+  	"build:clean": "rm -rf ./public",
+    "build:generate": "hugo -D",
     "build": "npm run build:clean && npm run build:genwebp && npm run build:generate",
     "deploy:cname": "echo \"usereactpatterns.com\" > public/CNAME",
     "deploy:gi": "cd public && git init && git add .",

@@ -6,9 +6,13 @@
 .index-title{
     color: rgba(0,0,0,.84);
     margin-top:20px;
+    font-size: 2rem;
+    font-size: max(2rem, 4vw);
 }
 .index-sub{
     color: rgba(0,0,0,.54);
+    font-size: 1.2rem;
+    font-size: max(1.2rem, 2vw);
 
 }
 .index-text{
@@ -20,6 +24,7 @@
 }
 .index-image{
     width: 200px;
+    width: min(200px, 40vw);
     margin-bottom: 1em;
 }
 .social-icon{
