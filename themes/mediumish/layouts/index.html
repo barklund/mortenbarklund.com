@@ -1,0 +1,40 @@
+{{ define "header"}}
+    {{- partial "_shared/navbar.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+    <div class="main-content">
+        <header class="text-center">
+            {{ with .Site.Params.index.picture }}
+                <img src="{{ . | urlize | relURL }}" class="text-center index-image">
+            {{ end }}
+            <h1 class="index-title">{{ .Site.Params.index.title }}</h1>
+        </header>
+
+        <section class="text-center index-title">
+            {{ with .Site.Params.index.subtitle }}
+            <h3 class="index-sub">{{ . }}</h3>
+            {{ end }}
+        </section>
+
+        <section class="index-recent">
+            {{ with .Site.Params.index.recent }}
+            <h4 class="index-sub">{{ . }}</h4>
+            {{ end }}
+
+            <div class="row listrecent">
+                {{ with .Site.GetPage "section" "blog" }}
+                    {{ $post_paginator := .Paginate (.Pages.ByWeight) 3 }}
+                    {{ range $post_paginator.Pages }}
+                        {{- partial "list-partials/postbox.html" . -}}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </section>
+    </div>
+    {{- partial "_shared/social.html" . -}}
+{{end}}
+
+{{ define "footer" }}
+    {{- partial "_shared/footer.html" . -}}
+{{end}}
