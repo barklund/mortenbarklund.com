@@ -11,6 +11,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
   talkyardServerUrl = "https://comments-for-usereactpatterns-com.talkyard.net"
   talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
 
+[params.meta]
+  description = "useReactPatterns is your one-stop destination to handy tips for writing better React."
+  keywords = "react, react hooks, react context, design patterns, react concurrent"
+
 [params.author]
   name = "Morten Barklund"
   thumbnail = "/images/author.jpg"
