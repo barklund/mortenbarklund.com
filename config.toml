@@ -4,6 +4,7 @@ title = "useReactPatterns"
 theme = "mediumish"
 summaryLength = 25
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+enableRobotsTXT = true
 
 [params]
   logo = "/images/logo.svg"
