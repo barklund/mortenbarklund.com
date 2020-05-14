@@ -1,6 +1,6 @@
-baseURL = "https://www.usereactpatterns.com/"
+baseURL = "https://www.mortenbarklund.com/"
 languageCode = "en-us"
-title = "useReactPatterns"
+title = "Morten Barklund"
 theme = "mediumish"
 summaryLength = 25
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
@@ -9,11 +9,9 @@ enableRobotsTXT = true
 [params]
   logo = "/images/logo.svg"
   description = "Handy tips for writing better React."
-  talkyardServerUrl = "https://comments-for-usereactpatterns-com.talkyard.net"
-  talkyardScriptUrl = "https://c1.ty-cdn.net/-/talkyard-comments.min.js"
 
 [params.meta]
-  description = "useReactPatterns is your one-stop destination to handy tips for writing better React."
+  description = "This website is your one-stop destination to handy tips for writing better React."
   keywords = "react, react hooks, react context, design patterns, react concurrent"
 
 [params.author]
@@ -24,7 +22,7 @@ enableRobotsTXT = true
 
 [params.index]
   picture = "/images/logo.svg"
-  title = "useReactPatterns"
+  title = "Morten Barklund"
   subtitle = "Handy tips for writing better React."
   recent = "Popular posts"
 
