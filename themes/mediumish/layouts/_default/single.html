@@ -23,7 +23,7 @@
                         <div class="row post-top-meta">
                             <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
                                 <picture>
-                                    <source srcset="{{ .Permalink }}.webp" />
+                                    <source srcset="{{ .Site.Params.author.thumbnail | urlize | relURL}}.webp" />
                                     <img class="author-thumb" src="{{ .Site.Params.author.thumbnail | urlize | relURL}}" alt="{{ .Site.Params.author.name }}" />
                                 </picture>
                                 <img >
@@ -74,8 +74,8 @@
                     <!-- End Categories -->
 
                     {{ if .Param "comments" }}
-                    {{ if .Site.Params "talkyardServerUrls" }}
-                    {{ if .Site.Params "talkyardScriptUrl" }}
+                    {{ if isset .Site.Params "talkyardServerUrls" }}
+                    {{ if isset .Site.Params "talkyardScriptUrl" }}
                     <script>talkyardServerUrl='{{ .Site.Params.talkyardServerUrl }}';</script>
                     <script async defer src="{{ .Site.Params.talkyardScriptUrl }}"></script>
                     <!-- You can specify a per page discussion id on the next line, if your URLs might change. -->
