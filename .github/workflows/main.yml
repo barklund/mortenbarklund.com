@@ -5,13 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install wget
-        run: sudo apt-get install wget
-      - name: Download libwebp for linux
-        run: wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.1.0-linux-x86-64.tar.gz
-      - name: Untar
-        run: tar -xzf libwebp-1.1.0-linux-x86-64.tar.gz
-      - name: Alias cwebp
-        run: alias cwebp="`pwd`/libwebp-1.1.0-linux-x86-64/bin/cwebp"
+        run: sudo apt-get install webp
+      #- name: Download libwebp for linux
+      #  run: wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.1.0-linux-x86-64.tar.gz
+      #- name: Untar
+      #  run: tar -xzf libwebp-1.1.0-linux-x86-64.tar.gz
+      #- name: Test cwebp
+      #  run: PATH=`pwd`/libwebp-1.1.0-linux-x86-64/bin:$PATH cwebp -version
       - name: Test cwebp
         run: cwebp -version
 
