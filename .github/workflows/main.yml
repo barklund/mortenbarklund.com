@@ -4,6 +4,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Install packages
+        run: apt-get install wget
+        run: wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.1.0-linux-x86-64.tar.gz
+        run: tar xc libwebp-1.1.0-linux-x86-64.tar.gz
+        run: ln -s libwebp-1.1.0-linux-x86-64/bin/cwebp /usr/local/bin/cwebp
+
       - name: Git checkout
         uses: actions/checkout@v2
 
