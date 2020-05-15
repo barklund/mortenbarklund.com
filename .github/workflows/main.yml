@@ -14,10 +14,8 @@ jobs:
         run: sudo ln -s libwebp-1.1.0-linux-x86-64/bin/cwebp /usr/bin/cwebp
       - name: Test path
         run: echo $PATH
-      - name: Test cwebp path
-        run: which cwebp
       - name: Test cwebp
-        run: cwebp --version
+        run: cwebp -version
 
       - name: Git checkout
         uses: actions/checkout@v2
