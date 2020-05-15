@@ -11,7 +11,7 @@ jobs:
       - name: Untar
         run: tar -xzf libwebp-1.1.0-linux-x86-64.tar.gz
       - name: Alias cwebp
-        run: alias cwebp libwebp-1.1.0-linux-x86-64/bin/cwebp
+        run: alias cwebp="`pwd`/libwebp-1.1.0-linux-x86-64/bin/cwebp"
       - name: Test cwebp
         run: cwebp -version
 
