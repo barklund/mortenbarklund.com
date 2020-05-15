@@ -2,7 +2,7 @@ name: CI
 on: push
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
@@ -13,17 +13,14 @@ jobs:
           hugo-version: "0.70.0"
 
       - name: Build
-        # remove --minify tag if you do not need it
-        # docs: https://gohugo.io/hugo-pipes/minification/
-        run: hugo --minify
+        run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.TOKEN }}
           external_repository: barklund/mortenbarklund.github.io
           publish_dir: ./public
-          #   keep_files: true
           user_name: <barklund>
           user_email: <morten@barklund.dk>
           publish_branch: master
-        #   cname: example.com
+          cname: mortenbarklund.com
