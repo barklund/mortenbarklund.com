@@ -2,7 +2,6 @@
 title: "Hello <World />"
 date: 2020-05-11T16:50:40-04:00
 publishdate: 2018-10-07T11:40:11+02:00
-image: "/images/blog/hello.jpg"
 tags: ["interesting"]
 comments: true
 weight: 100

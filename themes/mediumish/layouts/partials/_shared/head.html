@@ -6,8 +6,8 @@
 	<link rel="icon" href="{{ . | urlize | relURL }}">
 	{{ end }}
 	<title>{{ .Page.Title }} | {{ .Site.Title }}</title>
-	{{ with .Site.Params.meta.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.meta.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.meta.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+	<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }},{{ with .Site.Params.meta.keywords }}{{ . }}{{ end }}">
 
 	{{ template "_internal/twitter_cards.html" . }}
 	{{ template "_internal/opengraph.html" . }}
