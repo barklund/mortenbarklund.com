@@ -304,7 +304,7 @@ function EditName() {
 }
 ```
 
-And again, we can see this in action, in this live example. On the surface is completely identical to before, but now the context is internalised behind the provider and the custom hook resulting in a much cleaner interface between the provider and the rest of the application:
+And again, we can see this in action, in this live example. On the surface the example is completely identical to before, but now the context is internalised behind the provider and the custom hook resulting in a much cleaner interface between the provider and the rest of the application:
 
 {{% pen id="RwrVRQe" %}}
 
@@ -371,7 +371,7 @@ Note how both these are applied – among many other providers – in [a very sp
 
 #### UI state
 
-This pattern can be used as component-local storage storage for UI state - a use that redux handles rather poorly in my opinion.
+This pattern can be used as component-local storage for UI state - a use that redux handles rather poorly in my opinion.
 
 Imagine a tabbed interface - you want to remember which tab is currently active, but there's no need to bring in some big library to fuel this. It can be done very simple and elegantly with the provider pattern:
 
@@ -421,4 +421,4 @@ Their examples are a bit crude, but it's fairly simple to combine with the above
 
 First off, easy now – calm down!
 
-Secondly: no, most definitely not. Redux (in particular when combined with `redux-toolkit`) has many functionalities outside of this – and redux actually uses React Context under the hood these days. It's basically this pattern on steroids with many years of optimisation. It does what it does (application-wide storage) very well, but it might be overkill in a smaller (or even medium-sized) application.
+Secondly: no, most definitely not. Redux (in particular when combined with `redux-toolkit`) has many functionalities outside of this – and redux actually uses React Context under the hood these days. It's basically this pattern on steroids with many years of optimisation. It does what it does (application-wide storage) very well, but it might be overkill in a smaller (or even medium-sized) applications.
