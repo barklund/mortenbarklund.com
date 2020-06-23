@@ -409,7 +409,7 @@ The reason that the context lives in its own file is three-fold:
 
 #### Is the context even necessary
 
-Well, no. Note that the actual context (the variable created in the `context.js` file) is an internal implementation detail of the user provider – and it could technically be swapped for any other technology provider similar functionality such as `redux`.
+Well, no. Note that the actual context (the variable created in the `context.js` file) is an internal implementation detail of the user provider – and it could technically be swapped for any other technology resulting in similar functionality such as `redux`.
 
 #### What about all those re-renders?
 
