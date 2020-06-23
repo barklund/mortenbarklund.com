@@ -143,7 +143,7 @@ function ParentWelcome() {
 }
 ```
 
-While the two latter options are of course workable, they're not as clean as you might want them to be. However, that's where the `useContext` hook comes in!
+While the two latter options are of course workable, they're not as clean as you might want them to be. And that's where the `useContext` hook comes to the rescue!
 
 --- 
 
@@ -401,7 +401,7 @@ Such usage can be found in the `google/web-stories-wp` codebase in the [inspecto
 
 #### Why does the context have its own file?
 
-The reason that the context lives in it's own file is three-fold:
+The reason that the context lives in its own file is three-fold:
 
 1. It allows context reuse - you might actually end up creating multiple providers for the same context (though it's rare).
 1. It can be used to mock the provider in testing
@@ -415,7 +415,7 @@ Well, no. Note that the actual context (the variable created in the `context.js`
 
 To avoid unneccessary re-renders when unrelated context values change, please use something akin to [`use-context-selector`](https://github.com/dai-shi/use-context-selector), which memoizes the actually used variables from the context and thus only re-renders your components, if the used properties change.
 
-Their examples are a bit crude, but it's faily simple to combine with the above pattern.
+Their examples are a bit crude, but it's fairly simple to combine with the above pattern.
 
 #### So is `redux` just garbage now? Should I just drown it like a lost kitten? Should I chuck it on top of the local tire fire?
 
