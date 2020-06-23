@@ -48,11 +48,18 @@
 
                     <!-- Post Featured Image -->
                     {{$images := .Resources.ByType "image"}}
+                    {{$caption := .Params.covercaption }}
+                    {{$alt := .Params.coveralt }}
                     {{with $images.GetMatch "*cover*.jpg" }}
+                    <figure class="featured-figure">
                         <picture>
                             <source srcset="{{ .Permalink }}.webp" />
-                            <img class="featured-image img-fluid" src="{{ .Permalink }}" alt="" />
+                            <img class="featured-image img-fluid" src="{{ .Permalink }}" alt="{{ $alt }}" />
                         </picture>
+                        {{ if $caption }}
+                        <figcaption class="featured-caption">{{ $caption }}</figcaption>
+                        {{ end }}
+                    </figure>
                     {{end}}
                     <!-- End Featured Image -->
 

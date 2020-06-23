@@ -53,3 +53,46 @@
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.8);
 }
+
+/* codepen embeds */
+.cp_embed_wrapper {
+  margin-bottom: 1em;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+hr {
+    overflow: visible; /* For IE */
+    height: 15px;
+    border-style: solid;
+    border-color: var(--main-color);
+    border-width: 1px 0 0 0;
+    border-radius: 10px;
+    margin: 3em 0 1em;
+    position: relative;
+}
+hr::after {
+  content: '<hr />';
+  display: block;
+  color: var(--main-color);
+  position: absolute;
+  font-family: monospace;
+  background-color: white;
+  left: 50%;
+  margin-left: -2em;
+  width: 4em;
+  top: -1em;
+  text-align: center;
+  font-size: 70%;
+  transform: scale(0.7);
+  transform-origin: 50% 50%;
+}
+hr::before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 15px;
+    margin-top: -15px;
+    border-style: solid;
+    border-color: var(--main-color);
+    border-width: 0 0 1px;
+    border-radius: 10px;
+}

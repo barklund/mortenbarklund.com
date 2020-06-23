@@ -21,7 +21,7 @@ enableRobotsTXT = true
   name = "Morten Barklund"
   thumbnail = "/images/author.jpg"
   thumb = "/images/author.jpg"
-  description = "Lead Frontend Developer, Corgi fanatic and board game enthusiast. Also, I simply ❤️ hooks!"
+  description = "Lead Frontend Developer, React expert, accessibility advocate, avid runner, and board game enthusiast. Also, I simply ❤️  corgis!"
 
 [params.index]
   picture = "/images/logo.svg"

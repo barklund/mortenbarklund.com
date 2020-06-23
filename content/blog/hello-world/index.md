@@ -1,18 +1,12 @@
 ---
 title: "Hello <World />"
 date: 2020-05-11T16:50:40-04:00
-publishdate: 2020-05-15T11:00:11-04:00
-tags: ["interesting"]
-comments: true
-weight: 100
+publishdate: 2020-06-18T11:00:11-04:00
+tags: ["self", "about"]
+weight: 200
+summary: Welcome to my blog - a place for thoughts on React, accessibility and testing.
 ---
 
-Somewhere in the middle of the markdown document:
+Welcome. So, what's this about? This will be a place where I dump my thoughts and ideas - mostly about React, accessibility and testing, but also other more or less related topics.
 
-This is a normal footnote, which directs to the bottom of the document. [^1]
-This is a dual footnote, which also reuses the url from the footnote for a hyperlink [^2]
-
-At the bottom om the document:
-
-[^1]: Here goes the normal footnote, which is used inside the text above.
-[^2]: And here the dual footnote, which beside the footnote (link to the bottom) also contains a link out of document including text mouseover (optional).
+I'll post new content at least weekly. Please follow along on [twitter](https://www.twitter.com/barklund) or subscribe to [the newsletter](/newsletter) here - I'll promise to only ping you semimonthly about new content!
