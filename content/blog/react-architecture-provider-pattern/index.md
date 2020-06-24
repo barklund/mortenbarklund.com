@@ -27,7 +27,7 @@ The concept of _Design Patterns_ originates in the seminal book, _[Design Patter
 
 A design pattern is in essence a way of composing units of code to a larger whole that solves a specific purpose in a well-known setup and constuction and with well-established relationship and roles between the different units. The _Factory_ pattern for instance describes how an interface is used to create instances of a single object with different starting configurations - and how implementations of said pattern can then decide on the implementation details irrelevant to the invoker. Design Patterns are also sometimes described as _micro architecture_, as they can be used over and over on many different scales in the same application.
 
-The most important thing to understand about this book is however, that the four authors did not invent anything new. They merely documented the practices they saw present in real-world development teams and gathered the experience of numerous experts across the field. But more importantly, the coined the terms describing these patterns and put them into context. This enabled developers to have a conversation at a more abstract level about how to construct software without instantly going into the nitty-gritty of actual implementation.
+The most important thing to understand about this book is however that the four authors did not invent anything new. They merely documented the practices they saw present in real-world development teams and gathered the experience of numerous experts across the field. But more importantly, the coined the terms describing these patterns and put them into context. This enabled developers to have a conversation at a more abstract level about how to construct software without instantly going into the nitty-gritty of actual implementation.
 
 The Gang of Four described a total of [23 design patterns](https://en.wikipedia.org/wiki/Design_Patterns#Patterns_by_type), many of whom are still very well-known today. They all came from the world of object-oriented programming, but many are applicable outside of that realm. Concepts such as _Observer_, _Singleton_, _Proxy_ and many others are very well-known in many languages - including JavaScript.
 
@@ -35,25 +35,25 @@ The Gang of Four described a total of [23 design patterns](https://en.wikipedia.
 
 ### React Architecture
 
-One of the main features and main problems of React is the lack of a common structure or architecture. You can organize your app in whatever way makes sense to you. React itself provides a minimal architecture which in fact is based around some of the design patterns described by _The Gang of Four_. React is at its core one big _Observer_, makes heavy use of the _Flyweight_ pattern to minimize memory usage by reusing objects whereever possible, and of course is based on the _State_ pattern (heavily combined with the overall Observer pattern).
+One of the main features – but also one of the main problems – of React is the lack of a common structure or architecture. You can organize your app in whatever way makes sense to you. React itself provides a minimal architecture which in fact is based around some of the design patterns described by _The Gang of Four_. React is at its core one big _Observer_, makes heavy use of the _Flyweight_ pattern to minimize memory usage by reusing objects whereever possible, and of course, is based on the _State_ pattern (heavily combined with the overall Observer pattern).
 
 But on the outside, React seems very bare-bones. If you `create-react-app` with the default template, you get the tiniest possible react application with only 1 file of business logic and very little guidance as to how you'd add more functionality to this. This in turn leads different people, teams and companies to develop completely different strategies as to how they prefer to use this underlying library to build huge React applications.
 
-That being said, common patterns of course arise, that other developers tend to follow. Both by change, but also by knowledge sharing. Early patterns included idea such as the separation of container vs presentation, higher-order components (HoC's) and for reversing the composition: render props.
+That being said common patterns arise which other developers tend to follow. Both by change, but also by knowledge sharing. Early patterns included ideas such as the separation of container vs presentation, higher-order components (HoC's) and for reversing the information flow: render props.
 
-But then React Hooks came, and most of those changed. Completely. What used to be common organizational principles are now completed forgotten or even frowned upon. Even the basic minimal interface provided by the core framework in the form of lifecycle methods is now slowly being deprecated in favor of hook-based approaches.
+But then, React Hooks came – and most of those patterns changed. Completely. What used to be common organizational principles are now completed forgotten or even frowned upon. Even the basic minimal interface provided by the core framework in the form of lifecycle methods is now slowly being deprecated in favor of hook-based approaches.
 
 ---
 
 ### React Context: Provider and Consumer
 
-[React Context](https://reactjs.org/docs/context.html) is a fairly new feature in React, that is surprisingly unknown to many developers, despite its versatility in React architecture. React Context is considered part of "modern React" along with hooks even though React Context actually came out quite a bit before hooks and can be used completely without any hooks[^1].
+[React Context](https://reactjs.org/docs/context.html) is a fairly new feature in React. React Context is surprisingly unknown to many developers, despite its versatility in React architecture. React Context is considered part of "modern React" along with hooks even though React Context actually came out quite a bit before hooks and can be used completely without any hooks[^1].
 
 [^1]: React Context came with [React 16.3](https://reactjs.org/blog/2018/03/29/react-v-16-3.html) in March 2018 whereas hooks came with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) in February 2019.
 
 React Context is a method to send information between components within a component tree. Normally information only travels in one direction, from the Context provider to any component consuming said context. It does nothing you cannot do with simple passing of properties, however it allows you to skip all the intermediate components and send information arbitrarily deep in the component tree.
 
-Let's do a very simple example with a user context holding the name of the currently active user:
+Let's do a very simple example with a User Context holding the name of the currently active user:
 
 ```jsx
 import { createContext  } from 'react';
@@ -86,17 +86,17 @@ function App() {
 
 Breaking this down, this consists of three main parts:
 
-* `createContext`: Create a new provider than can be both provided and consumed - with a default value if no parent provider exists.
+* `createContext`: Create a new context object than can be both provided and consumed - with a default value if no parent provider exists.
 * `SomeContext.Provider`: A React component that provides a new value for any consumer below it in the component tree.
 * `SomeContext.Consumer`: A React component expecting a render prop which will be rendered with the current value of the nearest provider in the component tree above it.
 
 This all seems like an incredibly simple construction, but it's immensely powerful and allows for some very complex constructions – especially when combined with hooks, as we'll see in the next section.
 
-Note that a consumer can have no provider – or multiple providers – above it. These are however both fairly uncommon situations, and we'll ignore those for now. In the following sections, we'll always pair a consumer with a single parent provider. But most often many consumers with the same parent provider.
+Note that a consumer can have no provider – or multiple providers – above it. These are however both fairly uncommon situations, and we'll ignore those for now. In the following sections, we'll always pair a consumer with a single parent provider. But most often many consumers for each parent provider.
 
 #### Shortcomings of the React Context Consumer
 
-The consumer component above is a little weird to use, as is often the case when using render props. You cannot directly access the values in your component, but have to either move your logic inside the render prop function or pass the values to a child component:
+The consumer component mentioned in the previous section is a little weird to use, as is often the case when using render props. You cannot directly access the values in your component, but have to either move your logic inside the render prop function or pass the values to a child component:
 
 ```jsx
 // This will not work
@@ -363,9 +363,9 @@ function TodoProvider({children}) {
 
 Note the use of `useCallback` above. It ensures minimal re-renders of components using this context, as the function is guaranteed to be stable (as its memoized without dependencies). If you don't fully grasp this, don't worry. It's a whole separate and deeply complex topic for a future article.
 
-Furthermore note, that the above provider would actually be a good use-case for `useReducer` – but that's also a topic for another time.
+Furthermore, note that the above provider would actually be a good use-case for `useReducer` – but that's also a topic for another time.
 
-This usage can be found in the `google/web-stories-wp` codebase in the [history provider](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/app/history/historyProvider.js) and the [story provider] (https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/app/story/storyProvider.js) - each a provider of different levels of application-wide storage and each with their own associated states and actions.
+This usage can be found in the `google/web-stories-wp` codebase in the [history provider](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/app/history/historyProvider.js) and the [story provider](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/app/story/storyProvider.js) - each a provider of different levels of application-wide storage and each with their own associated states and actions.
 
 Note how both these are applied – among many other providers – in [a very specific order](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/app/index.js#L52-L83) in the main application file.
 
@@ -391,7 +391,7 @@ function TabProvider({children}) {
 }
 ```
 
-This is almost too simply to be true, but it can actually provide value to the codebase even in a such a distilled example. Because it will often be the case, that you'll add more functionality over time, and then you already have a good abstraction to handle this. Maybe you want the old panel to collapse in an animation before switching to the new one. Or maybe you have some data that requires loading before showing the tabs at all.
+This is almost too simply to be true, but it can actually provide value to the codebase even in a such a distilled example. Because it will often be the case that you'll add more functionality over time, and then you already have a good abstraction to handle this. Maybe you want the old panel to collapse in an animation before switching to the new one. Or maybe you have some data that requires loading before showing the tabs at all.
 
 Such usage can be found in the `google/web-stories-wp` codebase in the [inspector provider](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/components/inspector/inspectorProvider.js) (which provides current tab among a few other minor things relevant for the inspector panels) and the [panel](https://github.com/google/web-stories-wp/blob/master/assets/src/edit-story/components/panels/panel/panel.js) – a small provider around each panel that remembers if the panel is collapsed or not, if resized or not and if so, to what size.
 
