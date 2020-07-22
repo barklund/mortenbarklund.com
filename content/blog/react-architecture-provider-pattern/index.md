@@ -195,6 +195,7 @@ function App() {
 Now, `ShowName` is as before, but `EditName` will now use the newly provided `setName` property:
 
 ```jsx
+import { useContext } from 'react';
 function EditName() {
   const { setName } = useContext(UserContext);
   const handleClick = () => setName(prompt('What is your name?'));
@@ -254,6 +255,7 @@ function useUser() {
 }
 
 // File: user/provider.js
+import { useState } from 'react';
 function UserProvider({ children }) {
   const [name, setName] = useState('World');
   const value = {
@@ -319,6 +321,7 @@ This pattern can be used as application-wide storage in lieu of other libraries 
 Imagine the classic todo application. Our provider has a state, which is the list of todos, and a couple of functions for adding, removing and marking todos as complete:
 
 ```jsx
+import { useState } from 'react';
 function TodoProvider({children}) {
   // Start with an empty list
   const [todos, setTodos] = useState([]);
