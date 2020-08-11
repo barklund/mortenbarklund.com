@@ -5,7 +5,7 @@ publishdate: 2020-08-10T08:00:00-04:00
 weight: 100
 covercaption: "The label for this button should probably not be 'arrow' but 'walk' or similar - right?"
 coveralt: "A button to activate a cross walk signal"
-tags: ["accessibility", "html", "buton", "standards"]
+tags: ["accessibility", "html", "button", "standards"]
 ---
 
 When you see a button on a webpage, you probably know what it does. If you don't, the page is poorly made. But just because _you_ do, when you _see_ it, doesn't mean a non-visual user does when interacting with it.
@@ -159,7 +159,7 @@ But how do I actually know, that this text is in fact the accessible name for th
 <caption><em><small>Chrome developer tools showing the location of accessible name for an element - here showing in particular how `aria-labelledby` takes precedence over `aria-label`.</small></em></caption>
 </figure>
 
-And if you have upgraded to Chrome 84 or newer, it's even easier to see. Accessible name is now a first-class citizen in web debugging display directly in the web page when examining any HTML element along with the role and the keyboard focusability of the element:
+And if you have upgraded to Chrome 84 or newer, it's even easier to see. Accessible name is now a first-class citizen in web debugging displayed directly in the web page when examining any HTML element along with the role and the keyboard focusability of the element:
 
 <figure>
 <a href="./chrome_dev_tools_display_accessible_name.jpg"><img src="./chrome_dev_tools_display_accessible_name.jpg" alt="Chrome developer tools showing the location of accessible name for an element" /></a>
