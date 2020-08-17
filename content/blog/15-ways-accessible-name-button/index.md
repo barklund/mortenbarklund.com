@@ -1,5 +1,5 @@
 ---
-title: "15 (mostly bad) ways to set the accessible name of a button"
+title: "15 (mostly bad) Ways to Set the Accessible Name of a Button"
 date: 2020-08-10T08:00:00-04:00
 publishdate: 2020-08-10T08:00:00-04:00
 weight: 100
