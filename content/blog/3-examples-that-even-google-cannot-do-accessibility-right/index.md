@@ -2,7 +2,7 @@
 title: "3 Examples That Even Google Can't Do Accessibility Right"
 date: 2020-08-15T18:17:37-04:00
 publishDate: 2020-08-17T00:00:00-04:00
-weight: 100
+weight: 50
 covercaption: "Accessibility is - like rad skateboarding skills - hard, but we will never learn if we don't keep trying"
 coveralt: "A skateboarder losing control of his board mid-trick"
 tags: ["accessibility", "aria", "google", "examples"]
