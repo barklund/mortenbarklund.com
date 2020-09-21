@@ -8,25 +8,25 @@ coveralt: "A button to activate a cross walk signal"
 tags: ["accessibility", "html", "button", "standards"]
 ---
 
-When you see a button on a webpage, you probably know what it does. If you don't, the page is poorly made. But just because _you_ do, when you _see_ it, doesn't mean a non-visual user does when interacting with it.
+When you see a button on a webpage, you probably know what it does. If you don't, the page is poorly made. But just because _you_ do, when you _see_ it, doesn't mean a disabled user does when interacting with it.
 
-Maybe the button has a text label – okay then a screen reader can easily read the name of the button. But the button text might only make sense it the context of the element it is next to – e.g. it might say `"Select this"` where _"this"_ makes perfect sense when viewed, but not when read aloud.
+Maybe the button has a text label – okay then a screen reader can easily read the name of the button. But the button text might only make sense in the context of the element it is next to – e.g. it might say `"Select this"` where _"this"_ makes perfect sense when viewed, but not when read aloud.
 
-The button might in stead have an image, an SVG-shape or even some weird font glyph as its visual element - something that'll make sense to you as a sighted user, but not to a user with a screen reader this isn't informed of what the image represents.
+The button might in stead have an image, an SVG-shape or even some weird font glyph as its visual element - something that'll make sense to you as a sighted user, but not to a user with a screen reader who isn't informed of what the image represents.
 
 And all of the above applies not only to buttons, but also to input fields, headlines, images, videos and many other important smaller elements of your web application.
 
 In all such cases, you should make sure to provide a textual, meaningful **accessible name** to the element in question.
 
-## What is the accessible name?
+## What is an accessible name?
 
 The accessible name is the text string used by browsers and screen readers to represent the element in question. The algorithm for resolving the accessible name of an element is quite complex to account for some rather esoteric situations. However in practice most of the algorithm steps can be ignored and the accessible name is trivial to glean from any element.
 
-The actual algorithm is described in the [Accessible Name and Description Computation 1.1 W3 specification](https://www.w3.org/TR/accname-1.1) in [section §4.3](https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_te). However, this reads fairly badly and it's much better understood through some (more or less common) examples.
+The actual algorithm is described in the [Accessible Name and Description Computation 1.1 W3 specification](https://www.w3.org/TR/accname-1.1) in [section §4.3](https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_te), however this algorithm is fairly hard to read and it's much better understood through some (more or less common) examples.
 
 ## Examples of accessible names in HTML
 
-Here's a bunch of buttons, that on the surface appear to be very different, but all have the **exact same accessible name**, namely the string `"Publish post"`.
+Here's a bunch of buttons that on the surface appear to be very different, but all have the **exact same accessible name**, namely the string `"Publish post"`.
 
 These examples will give you an idea as to how different elements can be labelled in different ways - including images, texts, SVG's and input elements:
 
@@ -152,7 +152,7 @@ You should never have an `<input>` inside a `<button>` - even if it is `disabled
 
 ## How to see the accessible name
 
-But how do I actually know, that this text is in fact the accessible name for this element? Can I somehow test that it works correctly? Of course you can - right in your browser developer tools. In Chrome, you can find it right here:
+But how do I actually know that some text is in fact the accessible name for a specific element? Can I somehow test that it works correctly? Of course you can - right in your browser developer tools. In Chrome, you can find it right here:
 
 <figure>
 <a href="./chrome_dev_tools_accessible_name.jpg"><img src="./chrome_dev_tools_accessible_name.jpg" alt="Chrome developer tools showing the location of accessible name for an element" /></a>
