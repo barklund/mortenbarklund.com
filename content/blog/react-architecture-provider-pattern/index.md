@@ -41,7 +41,9 @@ But on the outside, React seems very bare-bones. If you `create-react-app` with 
 
 That being said common patterns arise which other developers tend to follow. Both by change, but also by knowledge sharing. Early patterns included ideas such as the separation of container vs presentation, higher-order components (HoC's) and for reversing the information flow: render props.
 
-But then, React Hooks came – and most of those patterns changed. Completely. What used to be common organizational principles are now completed forgotten or even frowned upon. Even the basic minimal interface provided by the core framework in the form of lifecycle methods is now slowly being deprecated in favor of hook-based approaches.
+But then, React Hooks came – and some of those patterns changed. Completely. What used to be common organizational principles are now completed forgotten or even frowned upon. Even the basic minimal interface provided by the core framework in the form of lifecycle methods is now slowly being deprecated in favor of hook-based approaches.
+
+Some patterns persisted, others have arisen in the post-hooks React world. This article has a nice overview of [4 of the main React design patterns](https://www.designmycodes.com/react/react-advanced-patterns.html) used today.
 
 ---
 
