@@ -2,7 +2,7 @@
 title: "React Architecture: The React Provider Pattern"
 date: 2020-05-11T18:23:05-04:00
 publishdate: 2020-06-20T08:00:00-04:00
-weight: 100
+weight: 50
 covercaption: "An <AcornProvider /> in action"
 coveralt: "A hand holding an acorn"
 tags: ["context", "hooks", "architecture", "design patterns", "usereducer"]

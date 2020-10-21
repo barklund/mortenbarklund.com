@@ -2,7 +2,7 @@
 title: "The simplest possible webapp implemented in React, Angular, and Vue"
 date: 2020-08-31T00:00:00-04:00
 publishDate: 2020-08-31T00:00:00-04:00
-weight: 50
+weight: 150
 covercaption: "We all have to start small before we go exploring the huge and scary world of frontend"
 coveralt: "A puppy looking up"
 tags: ["webapp", "react", "vue", "angular"]
