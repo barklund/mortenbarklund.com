@@ -2,7 +2,6 @@ name = "mediumish"
 license = "MIT"
 licenselink = "https://github.com/lgaida/mediumish-theme-gohugo/blob/master/LICENSE"
 description = "An elegant, mediumish theme for hugo"
-homepage = "http://lgaida.de"
 tags = ["Blog", "Responsive", "Personal", "Minimal", "Clean", "Disqus", "Google Analytics"]
 features = []
 min_version = "0.41"

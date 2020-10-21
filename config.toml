@@ -9,6 +9,9 @@ enableRobotsTXT = true
 [markup.goldmark.renderer]
   unsafe = true
 
+[markup.highlight]
+  noClasses = false
+
 [params]
   logo = "/images/logo.svg"
   description = "Handy tips for writing better React."

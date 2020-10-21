@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="{{ .Site.BaseURL }}/">
 
             {{ with .Site.Params.logo }}
-            <img src="{{ . | urlize | relURL }}" alt="logo">
+            <img src="{{ . | urlize | relURL }}" alt="Blog logo that happens to look a bit like the React logo">
             {{ else }}
             <span style="font-family:Righteous;">{{.Site.Title}}</span>
             {{ end }}
