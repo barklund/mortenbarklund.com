@@ -5,8 +5,10 @@ publishdate: 2020-06-18T11:00:11-04:00
 tags: ["self", "about"]
 weight: 200
 summary: Welcome to my blog - a place for thoughts on React, accessibility and testing.
+author: barklund
+categories: ["Blog"]
 ---
 
 Welcome. So, what's this about? This will be a place where I dump my thoughts and ideas - mostly about React, accessibility and testing, but also other more or less related topics.
 
-I'll post new content at least weekly. Please follow along on [twitter](https://www.twitter.com/barklund) or subscribe to [the newsletter](/newsletter) here - I'll promise to only ping you semimonthly about new content!
+I'll post new content about monthly. Please follow along on [twitter](https://www.twitter.com/barklund) or subscribe to [the newsletter](/newsletter) here - I'll promise to ping you only when a bunch of relevant new content has been added!

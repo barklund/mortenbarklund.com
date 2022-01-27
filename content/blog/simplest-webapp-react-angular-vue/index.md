@@ -6,6 +6,8 @@ weight: 150
 covercaption: "We all have to start small before we go exploring the huge and scary world of frontend"
 coveralt: "A puppy looking up"
 tags: ["webapp", "react", "vue", "angular"]
+author: barklund
+categories: ["web development"]
 ---
 
 Are you new to frontend development and feel that all the popular libraries and frameworks are too daunting to get started with? Do you always balk at tutorials, when they mention installing a bunch of programs and libraries and running scripts, compilers, and bundlers when trying to learn something new?

@@ -6,6 +6,8 @@ weight: 100
 covercaption: "The label for this button should probably not be 'arrow' but 'walk' or similar - right?"
 coveralt: "A button to activate a cross walk signal"
 tags: ["accessibility", "html", "button", "standards"]
+author: barklund
+categories: ["accessibility"]
 ---
 
 When you see a button on a webpage, you probably know what it does. If you don't, the page is poorly made. But just because _you_ do, when you _see_ it, doesn't mean a disabled user does when interacting with it.

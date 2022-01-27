@@ -1,11 +1,13 @@
 ---
-title: "Web Accessibility: 9 extensive tips for perfectly accessible React components (in 2020)"
+title: "Web Accessibility: 9 tips for accessible React components (in 2022)"
 date: 2020-10-20T08:00:00-04:00
 publishdate: 2020-10-20T08:00:00-04:00
 weight: 100
 covercaption: "Read on for an extensive checklist to create perfectly accessible React components"
 coveralt: "Woman writing on a notepad"
 tags: ["accessibility", "checklist", "standards"]
+author: barklund
+categories: ["accessibility", "react"]
 ---
 
 Web accessibility is somehow both the common fork and the holy grail of web development today – even in popular web frameworks such as React.

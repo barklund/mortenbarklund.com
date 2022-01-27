@@ -6,6 +6,8 @@ weight: 150
 covercaption: "Accessibility is - like rad skateboarding skills - hard, but we will never learn if we don't keep trying"
 coveralt: "A skateboarder losing control of his board mid-trick"
 tags: ["accessibility", "aria", "google", "examples"]
+author: barklund
+categories: ["accessibility"]
 ---
 
 Google is not infallible. Even _they_ fail at following accessibility best-practices. I have found 3 examples of (very common) mistakes, that even the bright minds at Google and all their efforts and reviews failed to see before shipping them to end-users.

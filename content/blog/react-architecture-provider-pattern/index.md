@@ -6,6 +6,8 @@ weight: 50
 covercaption: "An <AcornProvider /> in action"
 coveralt: "A hand holding an acorn"
 tags: ["context", "hooks", "architecture", "design patterns", "usereducer"]
+author: barklund
+categories: ["react"]
 ---
 
 The React Provider Pattern is one of the main emerging React design patterns in many modern React applications and variations of it can be seen touted by React experts across the board.
