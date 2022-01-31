@@ -103,3 +103,12 @@ hr::before { /* Not really supposed to work, but does */
     border-width: 0 0 1px;
     border-radius: 10px;
 }
+
+table {
+  margin-bottom: 1em;
+}
+
+td, th {
+  padding: 0.5em;
+  border: 1px solid #444;
+}
