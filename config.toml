@@ -46,6 +46,11 @@ enableRobotsTXT = true
     identifier = "blog"
     url = "/blog"
 [[menu.main]]
+    name = "Book"
+    weight = 100
+    identifier = "book"
+    url = "https://barklund.dev/rq2e"
+[[menu.main]]
     name = "Subscribe"
     identifier = "Subscribe"
     weight = 200
