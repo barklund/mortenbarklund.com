@@ -12,7 +12,7 @@
     "build": "npm run build:clean && npm run build:genwebp && npm run build:generate && npm run build:tgenerate",
     "deploy:cname": "echo \"mortenbarklund.com\" > public/CNAME",
     "deploy:gi": "cd public && git init && git add .",
-    "deploy:gc": "cd public && git commit -m \"Initial commit\"",
+    "deploy:gc": "cd public && git commit -m \"New deploy\"",
     "deploy:gra": "cd public && git remote add origin git@github.com:barklund/mortenbarklund.github.io.git",
     "deploy:ggp": "cd public && git push --force origin main",
     "deploy": "npm run deploy:cname && npm run deploy:gi && npm run deploy:gc && npm run deploy:gra && npm run deploy:ggp"
