@@ -21,7 +21,7 @@ That's what I set out to investigate. So come along for the ride.
 
 ### TL;DR
 
-React `mouseenter` and `mouseleave` events are weird, but more sensible than their DOM counterparts. They¨re all bubbling events though, but they don't really bubble "from" anywhere. And they even bubble the wrong way!
+React `mouseenter` and `mouseleave` events are weird, but more sensible than their DOM counterparts. They're all bubbling events though, but they don't really bubble "from" anywhere. And they even bubble the wrong way!
 
 An even better implementation in my opinion would be to just dispatch regular non-capturing, non-bubbling events to each element in sequence. It would be exactly that same as what React does now, except all the events would be in the `AT_TARGET` phase, the target would be the element in question and the `.bubbles` property would be false.
 
@@ -56,7 +56,7 @@ All the debugging information is output to the console, so not much to see if yo
 
 The `mouseenter` event is dispatched to a given target element, if and only if, the mouse pointer before the event was not inside the target element or any child inside the element and then enters the element or any child inside the element.
 
-Reversibly, the `mouseleave` event is dispatch to a given target element, when the mouse pointer was within the element or any child inside the element and then moves outside of the element or any child inside the element.
+Reversibly, the `mouseleave` event is dispatched to a given target element, when the mouse pointer was within the element or any child inside the element and then moves outside of the element or any child inside the element.
 
 Note that not all HTML elements have a visual representation, so some elements are collapsed or have no actual area to be inside. Consider for example a table, where you can have `<table><tbody><tr><td>Cell</td></tr><tbody><table>`, but the only thing you see visually in the browser is the single cell. You can move you mouse cursor from outside the table to inside the cell in one movement, and in that single instance, you will be entering 4 different elements. Conversely, you can move your cursor out of the cell to the outside leaving 4 elements in a single instance.
 
@@ -75,11 +75,11 @@ Let's say we have this simple bit of HTML:
 </main>
 ````
 
-If we assign a (non-capture) event listener to the `<chapter>` element in JavaScript and then move the mouse cursor from the `<h1>` title directly to the `<p>` element, how many times do you think the event listener will be invoked? Two! The mouse will enter <p> element, and in doing so, it will also enter the `<chapter>` element. Because the mouse enters the `<chapter>` element, the `mouseenter` event will dispatch to the chapter element. Then because the mouse entered the `<p>` element, a mouseenter event will dispatch on the `<p>` element. But because this event bubble, in dispatching this event, the DOM will also send an event to all parents of the `<p>` element in order starting from the parent first moving all the way out to the document root (and then to the `window` object).
+If we assign a (non-capture) event listener to the `mouseenter` event on the `<chapter>` element in JavaScript and then move the mouse cursor from the `<h1>` title directly to the `<p>` element, how many times do you think the event listener will be invoked? Two! The mouse will enter <p> element, and in doing so, it will also enter the `<chapter>` element. Because the mouse enters the `<chapter>` element, the `mouseenter` event will dispatch to the chapter element. Then because the mouse entered the `<p>` element, a `mouseenter` event will dispatch on the `<p>` element. But because this event bubble, in dispatching this event, the DOM will also send an event to all parents of the `<p>` element in order starting from the parent first moving all the way out to the document root (and then to the `window` object).
 
-The difference between the element being dispatched to the chapter element because the chapter element was entered, and the event dispatched to the chapter element because a child element was entered and the event bubbled can be seen in two ways. The `.target` property of the event object will in the former case refer to the chapter element, and in the latter to the child element. And the `.eventPhase` property of the event object will be 2 in the first case (`Event.AT_TARGET`) and 3 (`Event.BUBBLING_PHASE`) in the latter.
+The difference between the event being dispatched to the chapter element because the chapter element was entered, and the event dispatched to the chapter element because a child element was entered and the event bubbled can be seen in two ways. The `.target` property of the event object will in the former case refer to the chapter element, and in the latter to the child element. And the `.eventPhase` property of the event object will be 2 (`Event.AT_TARGET`) in the first case and 3 (`Event.BUBBLING_PHASE`) in the latter.
 
-So, if you want to create a listener in HTML that will be invoked, when the mouse enters a given element, but you don't care when the mouse moves around between children inside the element, you have to add a regular event listener and then also check either the target property or the eventPhase property, to make sure you're handling the right event. You could do something like this:
+So, if you want to create a listener in HTML that will be invoked, when the mouse enters a given element, but you don't care when the mouse moves around between children inside the element, you have to add a regular event listener and then also check either the `.target` property or the `.eventPhase` property, to make sure you're handling the right event. You could do something like this:
 
 ```js
 element.addEventListener('mouseenter', (evt) => {
@@ -92,9 +92,9 @@ It's a bit messy, but it means that these two events behave just like any other 
 
 ### The issue at the core
 
-The issue here is, that bubbling and _mouse entering element_ conceptually are two sides of the same coin. The `mouseenter` events means that the mouse cursor moved inside this or a child. And bubbling means that you will also receive an event when any child receives the event.
+The issue here is, that bubbling and _mouse entering child element_ conceptually are two sides of the same coin. The `mouseenter` events means that the mouse cursor moved inside this or a child. And bubbling means that you will also receive an event when any child receives the event.
 
-No other event works like that. When you click an element, only the element that you click will dispatch an event. Because of bubbling, this event will also bubble up to all parent elements. That's why you can add a click listener to a button element, even if it has an `<em>` element inside, and you will still only receive the event once. `mouseenter` (and `leave`) is different. The concept does both things. If click events worked in the same way, it would cause a lot of trouble too.
+No other event works like that. When you click an element, only the element that you click will dispatch an event. Because of bubbling, this event will also bubble up to all parent elements. That's why you can add a click listener to a button element, even if it has an `<em>` element inside, and you will still only receive the event once. `mouseenter` and `mouseleave` are different. Those conceptually do both things. If click events worked in the same way, it would cause a lot of trouble too.
 
 ---
 
