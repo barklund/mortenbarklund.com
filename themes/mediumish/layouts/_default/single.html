@@ -109,6 +109,7 @@
                 <!-- End Post -->
             </div>
         </div>
+
         <!-- End Article
         ================================================== -->
         {{ if .Params.comments }}
@@ -116,6 +117,7 @@
         {{ end }}
     </div>
     {{- partial "_shared/alertbar.html" . -}}
+    {{- partial "_shared/popup.html" . -}}
 {{ end }}
 
 {{ define "footer"}}
