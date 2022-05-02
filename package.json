@@ -7,7 +7,7 @@
   	"start": "hugo server -D",
     "build:genwebp": "find . -iname *.jpg ! -exec test -f {}.webp ';' -print -exec cwebp -jpeg_like -af {} -o {}.webp ';'",
   	"build:clean": "rm -rf ./public",
-    "build:generate": "hugo -D",
+    "build:generate": "hugo",
     "build:tgenerate": "find content/blog -maxdepth 1 -type d ! -path content/blog -exec sh -c 'tcardgen -f tcardgen/kintosans -t tcardgen/mb_template.png content/blog/\"$(basename \"{}\")\"/index.md -o content/blog/\"$(basename \"{}\")\"/twitter_feature.png'  \\;",
     "build": "npm run build:clean && npm run build:genwebp && npm run build:generate && npm run build:tgenerate",
     "deploy:cname": "echo \"mortenbarklund.com\" > public/CNAME",
