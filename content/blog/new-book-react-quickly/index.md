@@ -1,7 +1,7 @@
 ---
 title: "My new book is out: React Quickly, Second Edition"
 date: 2022-02-05T08:00:00-05:00
-weight: 50
+weight: 100
 covercaption: "The cover photo for my new book!"
 coveralt: "Book cover for React Quickly"
 author: barklund
