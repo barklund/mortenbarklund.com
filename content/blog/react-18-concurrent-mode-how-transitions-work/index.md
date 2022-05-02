@@ -6,7 +6,7 @@ tags: ["react", "concurrent mode", "react hooks"]
 covercaption: "Code execution in React used to be a straight road, but with Concurrent Mode, detours are possible!"
 coveralt: "A long straight road"
 weight: 50
-summary: "A deep-dive into React 18 Concurrent Mode and transitions including `startTransition` and `useTransition` with a lot of diagrams – and Wordle!"
+summary: "A deep-dive into React 18 Concurrent Mode and transitions including `startTransition` and `useTransition` with diagrams – and Wordle!"
 author: barklund
 categories: ["React", "Concurrency", "Hooks"]
 ---
