@@ -1,87 +1,95 @@
 <section class="overlay-popup">
-    <div class="overlay">
-        <button class="overlay-close">x</button>
-        <img src="/images/book.png" width="300" />
-        <div>
-            <h3>The Ultimate Guide to React in 2022</h3>
-            <p>Learn how to master React in this 600+ page book by Morten Barklund.</p>
-            <p>Use code <code>au35mbam</code> at checkout for 35% off!</p>
-            <a class="overlay-cta" href="//reactquickly.dev">Get React Quickly</a>
-        </div>
+  <div class="overlay">
+    <button class="overlay-close">x</button>
+    <img src="/images/book.png" width="300" />
+    <div>
+      <h3>The Ultimate Guide to React in 2022</h3>
+      <p>Learn how to master React in this 600+ page book by Morten Barklund.</p>
+      <p>Use code <code>au35mbam</code> at checkout for 35% off!</p>
+      <a class="overlay-cta" href="//reactquickly.dev">Get React Quickly</a>
     </div>
+  </div>
 </section>
 <script>
 const lastPopup = localStorage.getItem('last-popup') || 0;
 const numDaysSince = (new Date().getTime() - lastPopup) / 1000 / 60 / 60 / 24;
 if (numDaysSince >= 1) { // Only show once a day, at most
   localStorage.setItem('last-popup', new Date().getTime());
-  const getToggle = flag => () => document.querySelector(".overlay-popup").classList.toggle("visible", flag);
+  const getToggle = flag => () => {
+    document.querySelector(".overlay-popup").classList.toggle("visible", flag);
+    if (flag) {
+      document.addEventListener("keydown", closeIfEscape);
+    } else {
+      document.removeEventListener("keydown", closeIfEscape);
+    }
+  }
+  const closeIfEscape = ({ key }) => (key === 'Escape') && getToggle(false)();
   setTimeout(getToggle(true), 100_000);
   document.querySelector(".overlay-close").addEventListener("click", getToggle(false));
 }
 </script>
 <style>
 .overlay-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
-    background: rgba(33, 33, 33, 0.8);
-    transform: translateY(60%) scale(0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(33, 33, 33, 0.8);
+  transform: translateY(60%) scale(0);
 }
 
 .overlay-popup.visible {
-    transform: translateY(0) scale(1);
-    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform: translateY(0) scale(1);
+  transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #eee;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #eee;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
 }
 .overlay img {
-    max-width: 50vw;
+  max-width: 50vw;
 }
 @media (min-width: 720px) {
-    .overlay {
-        flex-direction: row;
-        width: initial;
-    }
+  .overlay {
+    flex-direction: row;
+    width: initial;
+  }
 }
 .overlay-close {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 30px;
-    height: 30px;
-    line-height: 28px;
-    padding: 0;
-    font-size: 20px;
-    background-color: #eee;
-    box-shadow: 0 0 4px rgba(0 0 0 / 0.5);
-    display: block;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    border: 0;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  padding: 0;
+  font-size: 20px;
+  background-color: #eee;
+  box-shadow: 0 0 4px rgba(0 0 0 / 0.5);
+  display: block;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
 }
 .overlay-cta {
-    display: inline-block;
-    background-color: #FC4A8B;
-    color: white;
-    padding: 1em;
-    margin: 1em 0;
+  display: inline-block;
+  background-color: #FC4A8B;
+  color: white;
+  padding: 1em;
+  margin: 1em 0;
 }
 .overlay-cta:hover {
-    color: white;
+  color: white;
 }
 </style>
