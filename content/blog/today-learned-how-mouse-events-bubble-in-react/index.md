@@ -6,6 +6,7 @@ weight: 50
 covercaption: "Bubbles always move the same way, don't they? Not in React, they don't!"
 coveralt: "A bubble floating in the air"
 author: barklund
+summary: While researching a related topic, I came across a section in the React documentation for synthetic mouse events about how "_the `onMouseEnter` and `onMouseLeave` events propagate from the element being left to the one being entered instead of ordinary bubbling and do not have a capture phase_". What does that even mean? Let's explore!
 categories: ["react"]
 tags: ["events", "propagation", "architecture"]
 
