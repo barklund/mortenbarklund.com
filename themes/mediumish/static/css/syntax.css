@@ -79,5 +79,21 @@
 /* GenericSubheading */ .chroma .gu { color: #B6B2A4 }
 /* GenericTraceback */ .chroma .gt {  }
 /* GenericUnderline */ .chroma .gl {  }
-/* Text */ .chroma . {  }
+/* Text */ .chroma * {  }
 /* TextWhitespace */ .chroma .w {  }
+
+table pre.chroma {
+  border: 0;
+}
+
+.dimmed .chroma code > * {
+  opacity: 0.3;
+}
+.dimmed .chroma .hl {
+  opacity: 1;
+  background: rgba(255 255 255 / 0.1);
+}
+.dimmed .chroma .hl .lnt {
+  color: #eee;
+}
+
