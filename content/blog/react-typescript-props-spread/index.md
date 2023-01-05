@@ -1,7 +1,6 @@
 ---
 title: "Spreading props correctly with React + TypeScript"
 date: 2023-01-04T21:00:00+01:00
-draft: true
 weight: 50
 covercaption: "Spreading props is like spreading jam - if you do it wrong, you get sticky fingers!"
 coveralt: "Jam on toast"
