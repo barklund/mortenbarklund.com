@@ -1,0 +1,31 @@
+{{/*
+
+    Embed a sandbox from codesandbox.io
+
+
+    The only required parameter is `id`.
+    It's the slug-hash of the sandbox. Get it from the url.
+    For other parameters and their default see below.
+    Overwrite them to your needs.
+
+    Examples:
+
+    - Simple:
+
+        {{% sandbox id="react-typescript-and-props-spreading-lypxqb" %}}
+
+
+    - Show sandbox editor only:
+
+        {{% sandbox id="react-typescript-and-props-spreading-lypxqb" view="editor" %}}
+
+*/}}
+
+{{/* DEFAULTS */}}
+{{ $height  := 500 }}
+
+<iframe
+    src="https://codesandbox.io/embed/{{ .Get "id" }}?fontsize=12&codemirror=1&hidenavigation=1&theme=dark&module={{ .Get "module" }}&highlights={{ .Get "highlights" }}&view={{ .Get "view" }}"
+    style="width:100%; height:{{ or (.Get "height") $height }}px; border:0; border-radius: 4px; overflow:hidden;"
+    title="React TypeScript and props spreading"
+></iframe>
