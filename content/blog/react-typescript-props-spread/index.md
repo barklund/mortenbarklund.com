@@ -84,7 +84,7 @@ function InputGroup({ label, type, required, placeholder, id }: InputGroupProps)
 
 But this is not a good approach for several reasons. First of all, our types above aren't as precise as the built-in ones. For example, the type property should not just be any string, but only one of a few select strings, that are actually valid input types.
 
-But more importantly, we don't want to enumerate all the properties in neither the component definition, nor the type definition. So we want to only specific the label property in our type, but somehow have the type also include all the normal properties used by an intrinsic input element.
+But more importantly, we don't want to enumerate all the properties in neither the component definition, nor the type definition. So we want to only specify the label property in our type, but somehow have the type also include all the normal properties used by an intrinsic input element.
 
 What we want is something like this:
 
@@ -188,15 +188,17 @@ Furthermore, this also allows the ref property, as with the `ComponentProps` opt
 
 #### e. `HTMLAttributes`
 
-Rather than using the element-specific interfaces such as `InputHTMLAttributes` can we instead use the generic `React.HTMLAttributes` interface.
+Rather than using the element-specific interfaces such as `InputHTMLAttributes` can we instead use the general `React.HTMLAttributes` interface.
 
-But this has two problems. First, it still requires a generic, which is the HTML element interface such as `HTMLAttributes<HTMLInputElement>`. But secondly, and a lot more important, this interface only includes HTML attributes that are applicable to all elements such as `className`, `id`, `style`, etc and not the element-specific ones such as `type` in case of the input element.
+But this has two problems. First, it still requires a generic, which is the HTML element interface such as `HTMLAttributes<HTMLInputElement>`. But secondly, and a lot more important, this interface only includes HTML attributes that are applicable to all elements such as `className`, `id`, `style`, etc and not the element-specific ones such as `type` in case of the input element. Remember, the HTML element passed as a generic parameter only defines the types for event handlers, it does not describe any properties directly.
 
 So that's a complete no-go!
 
 #### f. `HTMLProps`
 
 Finally, there's the all-encompassing interface `React.HTMLProps`. It still requires the HTML element interface as a generic argument (`HTMLProps<HTMLInputElement>`), but even worse, this interface allows **all** properties, that are allowed on any single element in HTML. So you can put an `open` property on your input, because `open` is a valid  property on the `<details />` element – and a 100 other properties, that aren't actually applicable to input elements.
+
+And we can't actually use it, because when we try to spread the rest argument to the `<input />`, TypeScript will complain and point out, that it could contain invalid properties not allowed on an input. So this is the worst option by far.
 
 ---
 
