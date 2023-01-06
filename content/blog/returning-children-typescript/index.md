@@ -26,7 +26,7 @@ function PageLinkList({ numPages, currentPage }) {
   return (
     <nav>
       {pageLinks.map((page) =>
-        <PageLink key={page} link={`?page=${page}`} isCurrent={page === currentPage}>{page+1}</PageLink>
+        <PageLink key={page} link={`?page=${page}`} isLink={page === currentPage}>{page+1}</PageLink>
       )}
     </nav>
   );
@@ -106,7 +106,7 @@ That is because the `PropsWithChildren` interface types the `children` property 
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined
 ```
 
-Note that this includes `undefined`. Components aren't allowed to return `undefined`, only `null` in case they shouldn't render anything.
+Note that this includes `undefined`, which is what TypeScript complains about (for now..!). Components aren't allowed to return `undefined`, but rather `null` in case they shouldn't render anything.
 
 So what can we do about that?
 

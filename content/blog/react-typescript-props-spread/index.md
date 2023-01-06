@@ -208,7 +208,16 @@ TypeScript is a tremendously useful tool in React, and once you've started using
 
 In this post, we've discussed how to correctly accept spreadable props in a React component using TypeScript. While there are many ways, extending your props from the `ComponentPropsWithoutRef<"component">` is the simplest, safest, and easiest solution, but there are other solutions just as safe, just a bit more verbose and requiring remembering the names of a lot more interfaces.
 
-Using this techniqure, here's how we would implement an `<InputGroup />` component in React and TypeScript with spreadable props served by CodeSandbox:
+| Interface | Easy to<br>write | Excludes<br>`ref` | Includes<br>specific<br>properties | Excludes<br>invalid<br>properties |
+|-|-|-|-|-|
+| `ComponentPropsWithoutRef<"*">` | ✅ | ✅ | ✅ | ✅ | 
+| `ComponentProps<"*">` | ✅ | 🚫 | ✅ | ✅ | 
+| `*HTMLAttributes<HTML*Element>` | 🤔 | 🚫 | ✅ | ✅ | 
+| `JSX.IntrinsicElements["*"]` | 🤬 | 🚫 | ✅ | ✅ | 
+| `HTMLAttributes<HTML*Element>` | ✅ | 🚫 | 🚫 | ✅ | 
+| `HTMLProps<HTML*Element>` | ✅ | 🚫 | ✅ | 🤯 |
+
+Using this technique, here's how we would implement an `<InputGroup />` component in React and TypeScript with spreadable props served by CodeSandbox:
 
 {{% sandbox id="react-typescript-and-props-spreading-lypxqb" view="editor" height="700" module="%2Fsrc%2FApp.tsx" highlights="3,4,5,7" %}}
 
