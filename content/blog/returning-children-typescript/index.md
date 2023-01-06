@@ -94,13 +94,13 @@ But this doesn't work. If you do this, you will see this error where we use the 
 
 ```
 'PageLink' cannot be used as a JSX component.
-  Its return type 'ReactNode' is not a valid JSX element.
-    Type 'undefined' is not assignable to type 'Element | null'.ts(27
+  Its return type 'string | number | boolean | ReactFragment | Element | null | undefined' is not a valid JSX element.
+    Type 'undefined' is not assignable to type 'Element | null'.
 ```
 
 Why is that? Well, that is because we're returning the `children` prop directly under some circumstances. And that prop does not qualify as a proper return value.
 
-That is because the `PropsWithChildren` interface types the `children` property as a ReactNode, which in turn is defined as:
+That is because the `PropsWithChildren` interface types the `children` property as `ReactNode`, which in turn is defined as:
 
 ```ts
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined
@@ -126,7 +126,7 @@ Options 2 seems a lot more approachable. We can just make sure to return `null` 
   return isLink ? <a href={link}>{children}</a> : (children ?? null);
 ```
 
-Here we use _nullish coalescing_  to return `null` in case `children` are `null` or `undefined`.
+Here we use _nullish coalescing_  to return `null` in case `children` is `undefined` (or `null`).
 
 Frustratingly, that **still** doesn't work. Now, we get another TypeScript error:
 
