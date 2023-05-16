@@ -11,6 +11,8 @@ tags: ["react", "typescript"]
 
 In this blog post, we're going to explore how to create a React component that can be passed any number of properties which will be passed through to some other component. This seems like a really narrow use-case, but it is very common especially when you're creating UI libraries or similar generic components.
 
+> This article is part of my ["Advanced React and TypeScript series"]({{< ref "/blog/advanced-react-typescript" >}} "Advanced React and TypeScript series") - go check out the other articles in the series too!
+
 We will in particular be discussing how to do this in TypeScript and how to correctly type the properties of the component to allow the correct set of properties to be passed in. There actually happens to be 6 different ways to do this in TypeScript and React, so which should you use? And which should you definitely not use?
 
 We'll be going over these steps:

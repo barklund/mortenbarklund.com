@@ -11,6 +11,8 @@ tags: ["react", "typescript"]
 
 In this blog post, we'll go over the topic of returning the `children` property directly from a React component discussing why you would want to do that, what issues you can run into when introducing TypeScript, and how we can get around it.
 
+> This article is part of my ["Advanced React and TypeScript series"]({{< ref "/blog/advanced-react-typescript" >}} "Advanced React and TypeScript series") - go check out the other articles in the series too!
+
 ---
 
 Let's say we're tasked with creating a React component to display a numbered list of pages for a pagination result. You know, those underlined numbers below search results with 1, 2, 3, etc. However, we don't want the current page to be a link, only the other pages in the list.
